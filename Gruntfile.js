@@ -55,10 +55,11 @@ module.exports = function (grunt) {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
-        files: [
-          '<%= yeoman.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          files: [
+              '<%= yeoman.app %>/{,*/}*.html',
+              '<%= yeoman.app %>/scripts/{,*/}*.js',
+              '.tmp/styles/{,*/}*.css',
+              '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
@@ -68,8 +69,8 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
+        hostname: '0.0.0.0',
+        livereload: 4000
       },
       livereload: {
         options: {
@@ -163,7 +164,8 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       options: {
-        cwd: '<%= yeoman.app %>'
+        //cwd: '<%= yeoman.app %>'
+          cwd: ''
       },
       app: {
         src: ['<%= yeoman.app %>/index.html'],
